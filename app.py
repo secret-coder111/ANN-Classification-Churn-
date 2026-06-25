@@ -122,8 +122,8 @@ def main():
 
         with st.spinner("Neural Network is processing..."):
             prob, scaled_features, feature_names = process_and_predict(model, scaler, onehotencoder, label_encoder, input_dict)
-            st.session_state.probability = 1-prob
-            st.session_state.retention_probability = prob
+            st.session_state.probability = prob
+            st.session_state.retention_probability = 1-prob
             st.session_state.input_dict = input_dict
             st.session_state.scaled_features = scaled_features
             st.session_state.feature_names = feature_names
